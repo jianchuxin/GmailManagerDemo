@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "gmailManager",
+  "description": "a gamil extension to receive and manage gmail notification",
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "permissions": [
+    "identity",
+    "activeTab",
+    "notifications",
+    "storage",
+    "alarms",
+    "downloads",
+    "identity.email",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "gmailManager",
+    "default_popup": "popup.html"
+  },
+  "oauth2": {
+    "client_id": "YOUR_CLIENT_KEY",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.readonly",
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  }
+}
